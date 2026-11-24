@@ -23,11 +23,17 @@ const CATEGORIAS: Categoria[] = [
     descripcion:
       (
         <>
+          <span className="block">
+            <b>Estudiantes / Alumni:</b>  Encuentra oportunidades de prácticas preprofesionales, pasantías y vinculación social. Postula a las vacantes que más te interesen y gestiona tu perfil y cada postulación. 
+            Las empresas publican ofertas, filtran candidatos por etiquetas y gestionan su proceso en un solo lugar.
+            Crea tu perfil con etiquetas de habilidades y tu condición EPN o externa, y recibe vacantes ordenadas por afinidad con tu perfil.
+          </span>
+          <span className="mt-3 block">
           <b className="font-semibold text-slate-900">Estudiantes:</b> Realiza tus prácticas preprofesionales, pasantías y vinculación social,
           <br />
           <b className="font-semibold text-slate-900">Alumni:</b> Estudiante graduados en busqueda de su primer empleo
           <br />
-          <b className="font-semibold text-slate-900">Empresas:</b> Gestiona tus procesos de selección y contrata a los mejores talentos.
+          </span>
         </>
       ),
     enlaces: [
@@ -40,7 +46,16 @@ const CATEGORIAS: Categoria[] = [
     num: "02",
     titulo: "Para empresas",
     descripcion:
-      "Publica vacantes con etiquetas y carreras afines, revisa postulantes ordenados por afinidad y mueve cada candidato por el proceso.",
+      (
+        <>
+          <span className="block">
+            Publica vacantes con etiquetas y carreras afines, revisa postulantes ordenados por afinidad y mueve cada candidato por el proceso.          
+          </span>
+          <span className="mt- block">
+          <b className="font-semibold text-slate-900">Empresas:</b> Gestiona tus procesos de selección y contrata a los mejores talentos.
+          </span>
+        </>
+      ),
     enlaces: [{ label: "Registrar empresa", href: "/registro" }],
   },
   {

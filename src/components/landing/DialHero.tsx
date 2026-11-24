@@ -21,16 +21,15 @@ type Opcion = {
 
 const OPCIONES: Opcion[] = [
   { text: "poliEmpleo", imagen: "/poliempleo.jpg", angulo: 0, href: "#conecta", negrita: true },
-  { text: "Estudiantes", imagen: "/estudiante.jpg", angulo: 120, target: "cat-estudiantes" },
-  { text: "Empresas", imagen: "/empresa.png", angulo: 180, target: "cat-empresas" },
-  { text: "Administración", imagen: "/administracion.svg", angulo: 240, target: "cat-coordinacion" },
+  { text: "Postulante", imagen: "/estudiante.jpg", angulo: 120, href: "/postulante" },
+  { text: "Empresas", imagen: "/empresa.png", angulo: 180, href: "/empresa-acceso" },
+  { text: "Administración", imagen: "/administracion.png", angulo: 240, href: "/admin-acceso" },
 ];
 
 const TICKS = Array.from({ length: 180 }, (_, i) => {
   const mayor = i % 15 === 0;
   return { deg: (360 / 180) * i, mayor };
 });
-const CARACTERES = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
 function normalizar(angulo: number) {
   return ((angulo % 360) + 360) % 360;
@@ -55,41 +54,8 @@ function indiceMasCercano(angulo: number) {
   return mejor;
 }
 
-/* Texto que se decodifica letra a letra hasta llegar al destino (efecto de sintonía). */
-function useTextoDecodificado(destino: string) {
-  const [texto, setTexto] = useState(destino);
-  useEffect(() => {
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) {
-      setTexto(destino);
-      return;
-    }
-    const total = 14;
-    let paso = 0;
-    let timer: ReturnType<typeof setTimeout>;
-    const frame = () => {
-      paso += 1;
-      if (paso >= total) {
-        setTexto(destino);
-        return;
-      }
-      const fijos = Math.floor((paso / total) * destino.length);
-      setTexto(
-        destino
-          .split("")
-          .map((c, i) => (i < fijos || c === " " ? c : CARACTERES[Math.floor(Math.random() * CARACTERES.length)]))
-          .join(""),
-      );
-      timer = setTimeout(frame, 30);
-    };
-    timer = setTimeout(frame, 0);
-    return () => clearTimeout(timer);
-  }, [destino]);
-  return texto;
-}
-
 const CLASE_ETIQUETA =
-  "absolute whitespace-nowrap border-0 bg-transparent p-0 font-sans text-[clamp(18px,2.2vmin,24px)] uppercase tracking-[0.15em] transition-colors";
+  "absolute whitespace-nowrap border-0 font-sans text-[clamp(18px,2.2vmin,24px)] uppercase tracking-[0.15em] transition-colors";
 
 export function DialHero() {
   const router = useRouter();
@@ -101,7 +67,6 @@ export function DialHero() {
   const [girando, setGirando] = useState(true);
   const [activo, setActivo] = useState(0);
   const opcion = OPCIONES[activo];
-  const texto = useTextoDecodificado(opcion.text.toUpperCase());
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -230,7 +195,7 @@ export function DialHero() {
               top: `calc(50% - var(--rd) * ${cy.toFixed(4)})`,
               transform: `translate(calc(${(-50 + 50 * f).toFixed(2)}% + ${(18 * f).toFixed(2)}px), calc(${(-50 - 50 * cy * vf).toFixed(2)}% - ${(18 * cy * vf).toFixed(2)}px))`,
             } as CSSProperties;
-            const clase = `${CLASE_ETIQUETA} ${i === activo ? "text-slate-900" : "text-slate-400 hover:text-slate-900"} ${o.negrita ? "font-semibold" : ""}`;
+            const clase = `${CLASE_ETIQUETA} ${i === activo ? "rounded-full bg-white/90 px-4 py-1.5 text-[var(--dial-accent)] shadow-sm" : "p-0 text-slate-400 hover:text-slate-900"} ${o.negrita ? "font-semibold" : ""}`;
             if (o.href && !o.href.startsWith("#")) {
               return (
                 <Link key={o.text} href={o.href} className={clase} style={estilo} onClick={(e) => e.stopPropagation()}>
@@ -292,13 +257,6 @@ export function DialHero() {
           <img key={opcion.imagen} src={opcion.imagen} alt={opcion.text} className="h-full w-full object-cover" />
         </div>
 
-        <p
-          aria-live="polite"
-          className="pointer-events-none absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-full bg-white/85 px-3 py-1 text-[clamp(20px,3.3vmin,33px)] uppercase tracking-[0.2em]"
-          style={{ color: "var(--dial-accent)" }}
-        >
-          {texto}
-        </p>
       </div>
 
       <button

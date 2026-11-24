@@ -261,3 +261,30 @@ export function adminStats() {
     .map((r) => ({ label: s(r.label), value: Number(r.value) }));
   return { kpis, byStatus, byCareer, topTags, byModality };
 }
+
+export interface CompanyLogo { id: number; name: string; logo: string; vacantes: number }
+
+/** Empresas registradas con su logo y el número de vacantes activas (para la marquesina del login). */
+export function listCompaniesWithLogos(): CompanyLogo[] {
+  const db = getDb();
+  return db.prepare(`SELECT u.id, u.name, COALESCE(cp.logo,'') AS logo,
+      (SELECT COUNT(*) FROM jobs j WHERE j.company_id = u.id AND j.status = 'active') AS vacantes
+    FROM users u LEFT JOIN company_profiles cp ON cp.user_id = u.id
+    WHERE u.role = 'company' AND u.active = 1
+    ORDER BY u.name`).all().map((r) => ({
+    id: Number(r.id), name: s(r.name), logo: s(r.logo), vacantes: Number(r.vacantes ?? 0),
+  }));
+}
+
+export interface PostulanteCard { id: number; name: string; career: string; foto: string; origin: string }
+
+/** Postulantes activos con su carrera y foto (para la marquesina de la página principal). */
+export function listPostulantesForMarquee(): PostulanteCard[] {
+  const db = getDb();
+  return db.prepare(`SELECT u.id, u.name, COALESCE(p.career,'') AS career, COALESCE(p.foto,'') AS foto, COALESCE(p.origin,'EPN') AS origin
+    FROM users u LEFT JOIN student_profiles p ON p.user_id = u.id
+    WHERE u.role = 'student' AND u.active = 1
+    ORDER BY u.name`).all().map((r) => ({
+    id: Number(r.id), name: s(r.name), career: s(r.career), foto: s(r.foto), origin: s(r.origin),
+  }));
+}

@@ -41,16 +41,11 @@ export default function Home() {
 
       <section id="conecta" className="scroll-mt-24 rounded-2xl bg-white p-8 ring-1 ring-slate-200 md:p-12">
         <h2 className="mt-3 text-3xl font-semibold leading-tight text-slate-900 md:text-[40px]">Conecta tu talento con las empresas que te buscan</h2>
-        <p className="mt-4 max-w-2xl text-base text-slate-600">
-          <b>Estudiantes:</b>  Realiza tus prácticas preprofesionales, pasantías y vinculación social.
-          <br />
-          <b>Alumni:</b>  Estudiante graduados en busqueda de su primer empleo.
-          <br />
-          <b>Empresas:</b>  Gestiona tus procesos de selección y contrata a los mejores talentos.
-        </p>
-        <p className="mt-4 max-w-2xl text-base text-slate-600">
-          <b>Estudiantes y Alumni:</b>  Encuentra oportunidades de prácticas preprofesionales, pasantías y vinculación social. Postula a las vacantes que más te interesen y gestiona tu perfil y
-          cada postulación. Las empresas publican ofertas, filtran candidatos por etiquetas y gestionan su proceso en un solo lugar.
+        <p className="mt-4 max-w-3xl text-base text-slate-600">
+          Estudiantes, alumni y empresas encuentran en poliEmpleo las ventajas de la plataforma: prácticas preprofesionales,
+          pasantías y vinculación social con su porcentaje de afinidad, y un CV en formato Harvard para los estudiantes y
+          alumni, además de publicación de vacantes y filtros por etiquetas para las empresas. Crea tu perfil, publica vacantes
+          y gestiona tu proceso de selección en un solo lugar.
         </p>
       </section>
 
