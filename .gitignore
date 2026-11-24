@@ -10,16 +10,16 @@ tsconfig.tsbuildinfo
 !.env.example
 
 # Datos locales: bases de datos, respaldos y cargas de usuarios (no subir)
-backup/
-data/*
-!data/import/
-data/import/*
-!data/import/*.js
-!data/import/*.py
-*.db
-*.db-*
-*.sqlite
-*.sqlite3
+# backup/
+# data/*
+# !data/import/
+# data/import/*
+# !data/import/*.js
+# !data/import/*.py
+# *.db
+# *.db-*
+# *.sqlite
+# *.sqlite3
 
 # Registros y archivos del sistema
 *.log

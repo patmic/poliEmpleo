@@ -1,0 +1,194 @@
+{
+  "entidades": {
+    "aliados": [],
+    "application_events": [
+      {
+        "id": 1,
+        "application_id": 1,
+        "status": "En revisión",
+        "note": "Postulación recibida",
+        "created_at": "2026-11-18 06:49:16"
+      }
+    ],
+    "applications": [
+      {
+        "id": 1,
+        "job_id": 3,
+        "student_id": 23,
+        "message": "ok",
+        "status": "En revisión",
+        "match_score": 82,
+        "rating": null,
+        "note": "",
+        "created_at": "2026-11-18 06:49:16",
+        "updated_at": "2026-11-18 06:49:16",
+        "linea_tecnica": "Software / LMS / UX",
+        "tipo_vinculacion": "Práctica preprofesional",
+        "rol_asignado": "",
+        "horas": 0
+      }
+    ],
+    "atenciones": [],
+    "company_profiles": [
+      {
+        "user_id": 1,
+        "ruc": "",
+        "sector": "Banca / Financiera",
+        "size": "Corporativo (+1000)",
+        "city": "Quito",
+        "website": "",
+        "phone": "",
+        "description": "Empresa importada como demostración. Completa el perfil desde el panel de la empresa.",
+        "verified": 0,
+        "tipo_actor": "",
+        "lineas": "",
+        "convenio_estado": "Sin contacto",
+        "calificacion": 0,
+        "logo": "/empresas/logos/banco-pichincha.jpg"
+      }
+    ],
+    "messages": [],
+    "jobs": [
+      {
+        "id": 41,
+        "company_id": 22,
+        "title": "TESTING",
+        "description": "Descricion valorar habilidades de testing",
+        "requirements": "Requisitos valorar habilidades de testing",
+        "responsibilities": "Responsabilidades valorar habilidades de testing",
+        "city": "Quito",
+        "modality": "Híbrido",
+        "job_type": "Tiempo completo",
+        "vacancies": 1,
+        "salary": "A convenir",
+        "careers": "[]",
+        "deadline": "2026-11-20",
+        "status": "active",
+        "created_at": "2026-11-18 17:50:31",
+        "linea_tecnica": "",
+        "prioridad": "Media",
+        "acepta_discapacidad": 1
+      }
+    ],
+    "notifications": [
+      {
+        "id": 1,
+        "user_id": 2,
+        "title": "Nueva postulación",
+        "message": "Camila Andrade Rivas Rivas se postuló a Analista comercial junior (afinidad 82%).",
+        "link": "/empresa/vacantes/3",
+        "is_read": 0,
+        "created_at": "2026-11-18 06:49:16"
+      }
+    ],
+    "retos": [
+      {
+        "id": 1,
+        "titulo": "Dashboard básico para una organización externa",
+        "origen": "Vacantes de BI, analítica, SQL y ETL/ELT",
+        "linea_tecnica": "Datos / BI",
+        "actividad": "Levantar indicadores, limpiar muestra de datos y crear dashboard",
+        "entregable": "Dashboard + ficha técnica + guía de uso",
+        "complejidad": "Media",
+        "impacto": "Alto",
+        "prioridad": "Alta",
+        "tiempo_estimado": "7 a 15 días",
+        "docente_focal": "",
+        "estado": "Priorizado",
+        "created_at": "2026-11-18 06:49:04"
+      }
+    ],
+    "senales": [
+      {
+        "id": 1,
+        "fuente": "LinkedIn Jobs",
+        "cargo": "Pasante Tecnología de la Información",
+        "empresa": "Quifatex",
+        "ciudad": "Quito",
+        "linea_tecnica": "Soporte TI / infraestructura",
+        "necesidad_inferida": "Apoyo operativo en tecnología corporativa",
+        "solucion_asociada": "Mesa de Ayuda / Diagnóstico TI",
+        "prioridad": "Alta",
+        "enlace": "",
+        "fecha_corte": "2026-11-18",
+        "created_at": "2026-11-18 06:49:03"
+      }
+    ],
+    "sessions": [
+      {
+        "token": "3c4a393860344305223a2afce418b0d94b5febb6e7957f33d82e8b33f81d8ff2",
+        "user_id": 22,
+        "expires_at": "2026-11-25 17:30:28"
+      }
+    ],
+    "student_profiles": [
+      {
+        "user_id": 23,
+        "origin": "EPN",
+        "condicion": "Estudiante EPN",
+        "institution": "Escuela Politécnica Nacional",
+        "career": "Ingeniería de Software",
+        "semester": "8.º semestre",
+        "student_code": "",
+        "gpa": "",
+        "phone": "",
+        "city": "Quito",
+        "linkedin": "",
+        "portfolio": "",
+        "headline": "",
+        "bio": "",
+        "modality_pref": "Híbrido",
+        "cv_json": "{}",
+        "cv_file": "",
+        "cv_updated_at": null,
+        "foto": "foto-23-1794986463824.png"
+      }
+    ],
+    "tags": [
+      {
+        "id": 1,
+        "name": "SQL",
+        "category": "Tecnologías"
+      },
+      {
+        "id": 135,
+        "name": "PHP",
+        "category": "Personalizada"
+      }
+    ],
+    "tic_componentes": [],
+    "tic_proyectos": [],
+    "user_tags": [
+      {
+        "user_id": 23,
+        "tag_id": 115
+      },
+      {
+        "user_id": 23,
+        "tag_id": 10
+      }
+    ],
+    "users": [
+      {
+        "id": 1,
+        "email": "banco-pichincha@demo.com",
+        "password_hash": "[omitido]",
+        "role": "company",
+        "name": "Banco Pichincha",
+        "active": 1,
+        "created_at": "2026-11-18 06:17:37",
+        "last_login": null
+      },
+      {
+        "id": 23,
+        "email": "estudiante@demo.com",
+        "password_hash": "[omitido]",
+        "role": "student",
+        "name": "Patmic Andrade Rivas Rivas",
+        "active": 1,
+        "created_at": "2026-11-18 06:46:13",
+        "last_login": "2026-11-18 17:28:20"
+      }
+    ]
+  }
+}
