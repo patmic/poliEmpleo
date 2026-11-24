@@ -1,0 +1,31 @@
+{
+  "name": "talento-epn",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PoliEmpleo : Tu Portal de empleo politécnico para estudiantes, Alumni y empresas.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22.5"
+  },
+  "dependencies": {
+    "docx": "9.5.1",
+    "motion": "^14.14.0",
+    "next": "14.2.35",
+    "pdf-parse": "1.1.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.1.11",
+    "@types/node": "22.15.21",
+    "@types/react": "18.3.23",
+    "@types/react-dom": "18.3.7",
+    "tailwindcss": "4.1.11",
+    "typescript": "5.8.3"
+  }
+}

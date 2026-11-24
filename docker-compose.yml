@@ -1,0 +1,26 @@
+services:
+  web:
+    build: .
+    image: talento-epn:latest
+    container_name: talento-epn
+    restart: unless-stopped
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      # Cargar datos de demostración en el primer arranque (poner "false" para empezar vacío).
+      SEED_DEMO: "${SEED_DEMO:-true}"
+      # Administrador inicial (se crea solo si aún no existe ningún admin). Útil con SEED_DEMO=false.
+      ADMIN_EMAIL: "${ADMIN_EMAIL:-}"
+      ADMIN_PASSWORD: "${ADMIN_PASSWORD:-}"
+      # Poner "true" solo si publicas el sitio detrás de HTTPS.
+      COOKIE_SECURE: "${COOKIE_SECURE:-false}"
+      # Opcional: lectura de CV con IA (compatible con la API de OpenAI). Sin clave se usa el lector local.
+      AI_API_KEY: "${AI_API_KEY:-}"
+      AI_BASE_URL: "${AI_BASE_URL:-https://api.deepseek.com}"
+      AI_MODEL: "${AI_MODEL:-deepseek-chat}"
+    volumes:
+      # Base de datos SQLite y PDFs subidos; sobreviven a reinicios y a "docker compose down".
+      - talento-data:/data
+
+volumes:
+  talento-data:
